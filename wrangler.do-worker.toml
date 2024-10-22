@@ -1,6 +1,6 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "secrets-bulk-do-binding-repro"
-main = "src/index.ts"
+name = "secrets-bulk-do-binding-repro-do-worker"
+main = "src/do-worker.ts"
 compatibility_date = "2024-10-18"
 
 [observability]
@@ -9,4 +9,7 @@ enabled = true
 [[durable_objects.bindings]]
 name = "MY_DURABLE_OBJECT"
 class_name = "MyDurableObject"
-script_name = "secrets-bulk-do-binding-repro-do-worker"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["MyDurableObject"]

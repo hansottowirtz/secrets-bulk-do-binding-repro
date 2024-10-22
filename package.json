@@ -3,10 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "deploy": "wrangler deploy",
-    "dev": "wrangler dev",
-    "start": "wrangler dev",
-    "cf-typegen": "wrangler types"
+    "deploy": "wrangler deploy --config wrangler.do-worker.toml && wrangler deploy",
+    "upload-secrets": "wrangler secret bulk secrets.json"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241018.0",
